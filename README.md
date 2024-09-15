@@ -14,5 +14,5 @@ number = 37
 ```
 
 ## Usage
-`x32-muter on` - configure the channel on (unmute it)
-`x32-muter off` - configure the channel off (mute it)
+* `x32-muter on` - configure the channel on (unmute it)
+* `x32-muter off` - configure the channel off (mute it)
