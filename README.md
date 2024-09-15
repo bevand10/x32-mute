@@ -1,9 +1,9 @@
-# x32-muter
+# x32-mute
 
 A utility to remotely control Behringer X32 audio console input channel mute states.
 
 ## Configuration
-The app reads its configuration from `/etc/default/x32-muter`. The file is in the classic `.ini` format, as this example shows:
+The app reads its configuration from `/etc/default/x32-mute`. The file is in the classic `.ini` format, as this example shows:
 
 ```text
 [x32]
@@ -14,5 +14,5 @@ number = 37
 ```
 
 ## Usage
-* `x32-muter on` - configure the channel on (unmute it)
-* `x32-muter off` - configure the channel off (mute it)
+* `x32-mute yes` - mute the channel
+* `x32-mute no`  - unmute the channel

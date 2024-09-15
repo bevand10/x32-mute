@@ -12,29 +12,29 @@ import (
 )
 
 const (
-	defaultX32IP   = "127.0.0.1"              // Default x32 IP
-	defaultPort    = 10023                    // Default port for Behringer X32
-	defaultChannel = 37                       // Default channel number
-	configPath     = "/etc/default/x32-muter" // Config file
+	defaultX32IP   = "127.0.0.1"             // Default x32 IP
+	defaultPort    = 10023                   // Default port for Behringer X32
+	defaultChannel = 37                      // Default channel number
+	configPath     = "/etc/default/x32-mute" // Config file
 )
 
 func main() {
-	// Check if an argument ("on" or "off") is provided
+	// Check if an argument ("yes" or "no") is provided
 	if len(os.Args) < 2 {
-		log.Fatal("Usage: go run client.go [on|off]")
+		log.Fatal("Usage: go run client.go [yes|no]")
 	}
 
-	// Parse the argument to determine whether to send "on" or "off"
+	// Parse the argument to determine whether to send "yes" or "no"
 	state := os.Args[1]
 	var oscValue osc.Int
 
 	switch state {
-	case "on":
-		oscValue = 1 // Unmute
-	case "off":
-		oscValue = 0 // Mute
+	case "yes":
+		oscValue = 0 // Mute (i.e. x32-mute yes) (0 = channel off)
+	case "no":
+		oscValue = 1 // Unmute (i.e. x32-mute no) (1 = channel on)
 	default:
-		log.Fatalf("Invalid argument: %s. Use 'on' or 'off'.", state)
+		log.Fatalf("Invalid argument: %s. Use 'yes' or 'no'.", state)
 	}
 
 	// Load the configuration from the config file if available
