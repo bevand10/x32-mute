@@ -15,7 +15,7 @@ const (
 	defaultX32IP   = "127.0.0.1"              // Default x32 IP
 	defaultPort    = 10023                    // Default port for Behringer X32
 	defaultChannel = 37                       // Default channel number
-	configPath     = "/etc/default/x32-muter" // Config file relative to home directory
+	configPath     = "/etc/default/x32-muter" // Config file
 )
 
 func main() {
