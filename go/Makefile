@@ -1,5 +1,5 @@
 
-app=$(shell basename $$PWD)
+app=x32-mute
 go=$(shell which go)
 fmt=$(shell which gofmt)
 static=CGO_ENABLED=0 GOOS=linux GOARCH=amd64
